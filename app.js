@@ -34,8 +34,6 @@ firebase.database().ref('Activity/').on('child_added', function (data) {
 })
 
 
-
-
 function addTask() {
 
     var inputTodo = document.getElementById("todoValue");
@@ -46,7 +44,6 @@ function addTask() {
     var database = firebase.database().ref('Activity/' + key)
     database.set(Activity);
     inputTodo.value = ""
-
 }
 
 function deleteAllTask() {
@@ -72,5 +69,4 @@ function editTodo(e) {
     firebase.database().ref('Activity/' + key).set({
         taskname: editValue,
     });
-
 }
